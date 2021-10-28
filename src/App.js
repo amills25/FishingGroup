@@ -89,6 +89,12 @@ export default function App() {
                         <Route path="/login">
                             <Login />
                         </Route>
+                        <Route path="/newuser">
+                            <NewUser />
+                        </Route>
+                        <Route path="/dashboard">
+                            <Dashboard />
+                        </Route>
                         <Route path="/shipping">
                             <Shipping />
                         </Route>
