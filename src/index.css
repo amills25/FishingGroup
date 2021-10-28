@@ -1,13 +1,61 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(
+        to right,
+        rgb(110, 166, 250),
+        rgb(153, 235, 238),
+        rgb(110, 166, 250),
+        rgb(153, 235, 238)
+    );
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.row-bordered {
+    border-bottom: 1px solid;
+}
+
+.row-bordered:first-child {
+    border-top: 1px solid;
+}
+
+.cardAlign {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.myCard {
+    padding: 10px;
+}
+
+.myImage {
+    max-height: 100px;
+}
+
+.myNav {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(
+        to right,
+        rgba(110, 166, 250),
+        rgb(153, 235, 238),
+        rgb(110, 166, 250),
+        rgb(153, 235, 238)
+    );
+}
+
+.caroPic {
+    max-height: 500px;
+}
+
+.caroPicReel {
+    max-height: 500px;
+    padding-right: 10vw;
+}
+
+.logo {
+    max-height: 200px;
 }
