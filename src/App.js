@@ -1,27 +1,20 @@
-<<<<<<< HEAD
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import MyNavbar from "../src/Components/MyNavbar";
-import Home from "../src/Pages/Home";
-import Catalogue from "../src/Pages/Catalogue";
+import MyNavbar from "./Components/MyNavbar";
+import Home from "./Pages/Home";
+import Catalogue from "./Pages/Catalogue";
 import ShowItem from "./Pages/ShowItem";
-import Cart from "../src/Pages/Cart";
+import Cart from "./Pages/Cart";
 import Dashboard from "./Pages/Dashboard";
 import NewUser from "./Pages/NewUser";
 import Login from "./Pages/Login";
-import React, { useState, useEffect } from "react";
-=======
-import React, { useState } from 'react'
-import Shipping from "./pages/Shipping"
-import Billing from "./pages/Billing"
-import Home from "./pages/Home"
-import Menu from "./components/Menu"
-import './App.css';
->>>>>>> 219cf3a0fca61d697253272f8fbaded14fd0cf5b
+import Shipping from "./Pages/Shipping";
+import Billing from "./Pages/Billing";
+import "./App.css";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-<<<<<<< HEAD
     Redirect,
 } from "react-router-dom";
 
@@ -65,10 +58,11 @@ export default function App() {
         });
     };
     const removeFromCart = (id) => {
-        let newCart = cartArray.filter((item, i) => {
+        let newCart = cartArray.filter((item) => {
             if (item.id !== id) {
                 return item;
             }
+            return false;
         });
         setCartArray(newCart);
     };
@@ -84,42 +78,9 @@ export default function App() {
             setToken(lsToken);
         }
     }, []);
-=======
-} from 'react-router-dom'
 
-function App() {
-
-    const [customer, setCustomer] = useState({})
-    const [validated, setValidated] = useState(false)
-
-    return (
-        <Router>
-            <Menu />
-            <Switch>
-                <Route path="/shipping">
-                    <Shipping
-                        customer={customer}
-                        setCustomer={setCustomer}
-                        validated={validated}
-                        setValidated={setValidated}
-                    />
-                </Route>
-                <Route path="/billing">
-                    <Billing
-                        customer={customer}
-                        setCustomer={setCustomer}
-                        validated={validated}
-                        setValidated={setValidated}
-                    />
-                </Route>
-                <Route path="/">
-                    <Home />
-                </Route>
-            </Switch>
-        </Router>
-    );
-}
->>>>>>> 219cf3a0fca61d697253272f8fbaded14fd0cf5b
+    const [customer, setCustomer] = useState({});
+    const [validated, setValidated] = useState(false);
 
     const saveToken = (userToken) => {
         localStorage.setItem("token", userToken);
@@ -180,12 +141,22 @@ function App() {
                                 <Dashboard token={token} />
                             )}
                         </Route>
-                        {/* <Route path="/shipping">
-                            <Shipping />
+                        <Route path="/shipping">
+                            <Shipping
+                                customer={customer}
+                                setCustomer={setCustomer}
+                                validated={validated}
+                                setValidated={setValidated}
+                            />
                         </Route>
                         <Route path="/billing">
-                            <Billing />
-                        </Route> */}
+                            <Billing
+                                customer={customer}
+                                setCustomer={setCustomer}
+                                validated={validated}
+                                setValidated={setValidated}
+                            />
+                        </Route>
                         <Route path={["/", "*"]}>
                             <Home />
                         </Route>
