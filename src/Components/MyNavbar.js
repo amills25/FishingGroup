@@ -62,23 +62,29 @@ export default function MyNavbar(props) {
                         Cart: {totalQuantity} Items
                     </Nav.Link>
                 </Nav>
-                <Navbar.Toggle />
-                <Nav.Link activeClassName={"active"} as={NavLink} to="/newuser">
-                    New User
-                </Nav.Link>
-                {props.token.length > 0 ? (
-                    <Button variant="success" onClick={logOut}>
-                        Logout
-                    </Button>
-                ) : (
+                <Nav className="ms-auto">
+                    {" "}
                     <Nav.Link
                         activeClassName={"active"}
                         as={NavLink}
-                        to="/login"
+                        to="/newuser"
+                        className="ml-auto"
                     >
-                        Login
+                        New User
                     </Nav.Link>
-                )}
+                    {props.token.length > 0 ? (
+                        <Nav.Link onClick={logOut}>Logout</Nav.Link>
+                    ) : (
+                        <Nav.Link
+                            activeClassName={"active"}
+                            as={NavLink}
+                            to="/login"
+                        >
+                            Login
+                        </Nav.Link>
+                    )}
+                </Nav>
+                <Navbar.Toggle />
             </Container>
         </Navbar>
     );
