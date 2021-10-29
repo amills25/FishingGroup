@@ -1,0 +1,202 @@
+[
+    {
+        "abrev": "AK",
+        "tax": 0
+    },
+    {
+        "abrev": "AL",
+        "tax": 0.04
+    },
+    {
+        "abrev": "AR",
+        "tax": 0.065
+    },
+    {
+        "abrev": "AZ",
+        "tax": 0.056
+    },
+    {
+        "abrev": "CA",
+        "tax": 0.0725
+    },
+    {
+        "abrev": "CO",
+        "tax": 0.029
+    },
+    {
+        "abrev": "CT",
+        "tax": 0.0635
+    },
+    {
+        "abrev": "DE",
+        "tax": 0
+    },
+    {
+        "abrev": "FL",
+        "tax": 0.06
+    },
+    {
+        "abrev": "GA",
+        "tax": 0.04
+    },
+    {
+        "abrev": "HI",
+        "tax": 0.04
+    },
+    {
+        "abrev": "IA",
+        "tax": 0.06
+    },
+    {
+        "abrev": "ID",
+        "tax": 0.06
+    },
+    {
+        "abrev": "IL",
+        "tax": 0.0625
+    },
+    {
+        "abrev": "IN",
+        "tax": 0.07
+    },
+    {
+        "abrev": "KS",
+        "tax": 0.065
+    },
+    {
+        "abrev": "KY",
+        "tax": 0.06
+    },
+    {
+        "abrev": "LA",
+        "tax": 0.0445
+    },
+    {
+        "abrev": "MA",
+        "tax": 0.055
+    },
+    {
+        "abrev": "MD",
+        "tax": 0.06
+    },
+    {
+        "abrev": "ME",
+        "tax": 0.055
+    },
+    {
+        "abrev": "MI",
+        "tax": 0.06
+    },
+    {
+        "abrev": "MN",
+        "tax": 0.06875
+    },
+    {
+        "abrev": "MO",
+        "tax": 0.04225
+    },
+    {
+        "abrev": "MS",
+        "tax": 0.07
+    },
+    {
+        "abrev": "MT",
+        "tax": 0
+    },
+    {
+        "abrev": "NC",
+        "tax": 0.0475
+    },
+    {
+        "abrev": "ND",
+        "tax": 0.05
+    },
+    {
+        "abrev": "NE",
+        "tax": 0.055
+    },
+    {
+        "abrev": "NH",
+        "tax": 0
+    },
+    {
+        "abrev": "NJ",
+        "tax": 0.06625
+    },
+    {
+        "abrev": "NM",
+        "tax": 0.05025
+    },
+    {
+        "abrev": "NV",
+        "tax": 0.0685
+    },
+    {
+        "abrev": "NY",
+        "tax": 0.04
+    },
+    {
+        "abrev": "OH",
+        "tax": 0.0575
+    },
+    {
+        "abrev": "OK",
+        "tax": 0.045
+    },
+    {
+        "abrev": "OR",
+        "tax": 0
+    },
+    {
+        "abrev": "PA",
+        "tax": 0.06
+    },
+    {
+        "abrev": "RI",
+        "tax": 0.07
+    },
+    {
+        "abrev": "SC",
+        "tax": 0.06
+    },
+    {
+        "abrev": "SD",
+        "tax": 0.045
+    },
+    {
+        "abrev": "TN",
+        "tax": 0.07
+    },
+    {
+        "abrev": "TX",
+        "tax": 0.625
+    },
+    {
+        "abrev": "UT",
+        "tax": 0.060
+    },
+    {
+        "abrev": "VA",
+        "tax": 0.053
+    },
+    {
+        "abrev": "VT",
+        "tax": 0.06
+    },
+    {
+        "abrev": "WA",
+        "tax": 0.065
+    },
+    {
+        "abrev": "WI",
+        "tax": 0.05
+    },
+    {
+        "abrev": "WV",
+        "tax": 0.06
+    },
+    {
+        "abrev": "WY",
+        "tax": 0.04
+    }
+]

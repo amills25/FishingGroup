@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import axios from "axios";
 import MyNavbar from "../src/Components/MyNavbar";
 import Home from "../src/Pages/Home";
@@ -8,10 +9,19 @@ import Dashboard from "./Pages/Dashboard";
 import NewUser from "./Pages/NewUser";
 import Login from "./Pages/Login";
 import React, { useState, useEffect } from "react";
+=======
+import React, { useState } from 'react'
+import Shipping from "./pages/Shipping"
+import Billing from "./pages/Billing"
+import Home from "./pages/Home"
+import Menu from "./components/Menu"
+import './App.css';
+>>>>>>> 219cf3a0fca61d697253272f8fbaded14fd0cf5b
 import {
     BrowserRouter as Router,
     Switch,
     Route,
+<<<<<<< HEAD
     Redirect,
 } from "react-router-dom";
 
@@ -74,6 +84,42 @@ export default function App() {
             setToken(lsToken);
         }
     }, []);
+=======
+} from 'react-router-dom'
+
+function App() {
+
+    const [customer, setCustomer] = useState({})
+    const [validated, setValidated] = useState(false)
+
+    return (
+        <Router>
+            <Menu />
+            <Switch>
+                <Route path="/shipping">
+                    <Shipping
+                        customer={customer}
+                        setCustomer={setCustomer}
+                        validated={validated}
+                        setValidated={setValidated}
+                    />
+                </Route>
+                <Route path="/billing">
+                    <Billing
+                        customer={customer}
+                        setCustomer={setCustomer}
+                        validated={validated}
+                        setValidated={setValidated}
+                    />
+                </Route>
+                <Route path="/">
+                    <Home />
+                </Route>
+            </Switch>
+        </Router>
+    );
+}
+>>>>>>> 219cf3a0fca61d697253272f8fbaded14fd0cf5b
 
     const saveToken = (userToken) => {
         localStorage.setItem("token", userToken);
