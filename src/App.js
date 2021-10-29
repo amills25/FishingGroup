@@ -4,8 +4,16 @@ import Home from "../src/Pages/Home";
 import Catalogue from "../src/Pages/Catalogue";
 import ShowItem from "./Pages/ShowItem";
 import Cart from "../src/Pages/Cart";
+import Dashboard from "./Pages/Dashboard";
+import NewUser from "./Pages/NewUser";
+import Login from "./Pages/Login";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+} from "react-router-dom";
 
 export default function App() {
     const [products, setProducts] = useState([]);
@@ -58,10 +66,33 @@ export default function App() {
         localStorage.setItem("cartArray", JSON.stringify(cartArray));
     }, [cartArray]);
 
+    const [token, setToken] = useState("");
+
+    useEffect(() => {
+        let lsToken = window.localStorage.getItem("token");
+        if (lsToken) {
+            setToken(lsToken);
+        }
+    }, []);
+
+    const saveToken = (userToken) => {
+        localStorage.setItem("token", userToken);
+        setToken(userToken);
+    };
+
+    const removeToken = () => {
+        localStorage.removeItem("token");
+        setToken("");
+    };
+
     return (
         <>
             <Router>
-                <MyNavbar cartArray={cartArray} />
+                <MyNavbar
+                    cartArray={cartArray}
+                    removeToken={removeToken}
+                    token={token}
+                />
                 <div>
                     {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
@@ -87,20 +118,28 @@ export default function App() {
                             />
                         </Route>
                         <Route path="/login">
-                            <Login />
+                            {token.length > 0 ? (
+                                <Redirect to="/dashboard" />
+                            ) : (
+                                <Login saveToken={saveToken} />
+                            )}
                         </Route>
                         <Route path="/newuser">
-                            <NewUser />
+                            <NewUser saveToken={saveToken} />
                         </Route>
                         <Route path="/dashboard">
-                            <Dashboard />
+                            {token.length === 0 ? (
+                                <Redirect to="/login" />
+                            ) : (
+                                <Dashboard token={token} />
+                            )}
                         </Route>
-                        <Route path="/shipping">
+                        {/* <Route path="/shipping">
                             <Shipping />
                         </Route>
                         <Route path="/billing">
                             <Billing />
-                        </Route>
+                        </Route> */}
                         <Route path={["/", "*"]}>
                             <Home />
                         </Route>

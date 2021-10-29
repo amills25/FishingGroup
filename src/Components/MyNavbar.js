@@ -1,6 +1,7 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { NavLink, Link } from "react-router-dom";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { NavLink, useHistory, Link } from "react-router-dom";
+import axios from "axios";
 
 export default function MyNavbar(props) {
     let totalQuantity = 0;
@@ -8,6 +9,30 @@ export default function MyNavbar(props) {
     props.cartArray.forEach((cartItem) => {
         totalQuantity = totalQuantity + cartItem.quantity;
     });
+
+    const history = useHistory();
+
+    const logOut = () => {
+        axios({
+            method: "get",
+            url:
+                "https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/auth/logout",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                Authorization: "Bearer " + props.token,
+            },
+        })
+            .then(function (response) {
+                props.removeToken();
+                history.push("/");
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
 
     return (
         <Navbar sticky="top" className="myNav">
@@ -38,7 +63,7 @@ export default function MyNavbar(props) {
                     </Nav.Link>
                 </Nav>
                 <Navbar.Toggle />
-                <Navbar.Collapse className="justify-content-end">
+                {/* <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
                         Welcome, <a href="#login">Andrew Mills</a>
                     </Navbar.Text>
@@ -52,7 +77,18 @@ export default function MyNavbar(props) {
                             Logout
                         </Nav.Link>
                     </Nav>
-                </Navbar.Collapse>
+                </Navbar.Collapse> */}
+                <Nav.Link as={Link} to="/">
+                    Home
+                </Nav.Link>
+                <Nav.Link as={Link} to="/newuser">
+                    New User
+                </Nav.Link>
+                {props.token.length > 0 ? (
+                    <Button variant="success" onClick={logOut}>
+                        Logout
+                    </Button>
+                ) : null}
             </Container>
         </Navbar>
     );
