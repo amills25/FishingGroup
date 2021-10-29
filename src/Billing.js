@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { Form, Row, Col, Button } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom'
 import statedata from '../data/statedata.json'
 
 export default function Billing(props) {
-
+    const history = useHistory()
     const handleChange = e => {
         props.setCustomer(prevState => ({
             ...prevState,
@@ -41,7 +42,8 @@ export default function Billing(props) {
             props.customer.billingccNumber && props.customer.billingccNumber.length > 15 &&
             props.customer.billingSecurityCode && props.customer.billingSecurityCode.length > 2 &&
             props.customer.billingExpiration && props.customer.billingExpiration.length > 6) {
-            props.setValidated(true)            
+            props.setValidated(true)
+            history.push("")          
         } else if (props.customer.firstName && props.customer.firstName.length > 3 &&
             props.customer.lastName && props.customer.lastName.length > 2 &&
             props.customer.address && props.customer.address.length > 10 &&
@@ -53,6 +55,7 @@ export default function Billing(props) {
             props.customer.billingSecurityCode && props.customer.billingSecurityCode.length > 2 &&
             props.customer.billingExpiration && props.customer.billingExpiration.length > 6) {
                 props.setValidated(true)
+                history.push("/")
             }
     }
 
