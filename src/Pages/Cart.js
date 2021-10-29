@@ -26,7 +26,11 @@ export default function Cart(props) {
                             </Col>
                             <Col>
                                 <div className="fw-bold">{product.name}</div>
-                                <br></br> Quantity: {product.quantity}
+                                <p>Price per unit: ${product.price}</p>
+                                <p>Quantity: {product.quantity}</p>
+                                <p>
+                                    Total: ${product.price * product.quantity}
+                                </p>
                             </Col>
                             <Col>
                                 <Button

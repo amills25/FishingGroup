@@ -147,6 +147,7 @@ export default function App() {
                                 setCustomer={setCustomer}
                                 validated={validated}
                                 setValidated={setValidated}
+                                cartArray={cartArray}
                             />
                         </Route>
                         <Route path="/billing">
@@ -155,6 +156,7 @@ export default function App() {
                                 setCustomer={setCustomer}
                                 validated={validated}
                                 setValidated={setValidated}
+                                token={token}
                             />
                         </Route>
                         <Route path={["/", "*"]}>
