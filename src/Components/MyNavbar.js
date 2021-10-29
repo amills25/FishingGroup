@@ -63,32 +63,22 @@ export default function MyNavbar(props) {
                     </Nav.Link>
                 </Nav>
                 <Navbar.Toggle />
-                {/* <Navbar.Collapse className="justify-content-end">
-                    <Navbar.Text>
-                        Welcome, <a href="#login">Andrew Mills</a>
-                    </Navbar.Text>
-                    <span style={{ paddingLeft: 8 }}></span>
-                    <Nav>
-                        <Nav.Link
-                            activeClassName={"active"}
-                            as={NavLink}
-                            to="/login"
-                        >
-                            Logout
-                        </Nav.Link>
-                    </Nav>
-                </Navbar.Collapse> */}
-                <Nav.Link as={Link} to="/">
-                    Home
-                </Nav.Link>
-                <Nav.Link as={Link} to="/newuser">
+                <Nav.Link activeClassName={"active"} as={NavLink} to="/newuser">
                     New User
                 </Nav.Link>
                 {props.token.length > 0 ? (
                     <Button variant="success" onClick={logOut}>
                         Logout
                     </Button>
-                ) : null}
+                ) : (
+                    <Nav.Link
+                        activeClassName={"active"}
+                        as={NavLink}
+                        to="/login"
+                    >
+                        Login
+                    </Nav.Link>
+                )}
             </Container>
         </Navbar>
     );
